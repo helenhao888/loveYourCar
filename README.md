@@ -2,4 +2,4 @@
 group repo for class first project
 
 
-![Image test](team-helen-project1/SiteSections/Top-section.jpg?raw=true "Top Section")
+https://github.com/petewanca/team-helen-project-1/blob/Mockup/SiteSections/Top-section.JPG
