@@ -2,5 +2,6 @@
 group repo for class first project
 
 
-[[https://github.com/petewanca/team-helen-project-1/blob/Mockup/SiteSections/Top-section.JPG|alt=topsection]]
+Visit this link to the mockup wikipage to see how site/app might look and function
+https://github.com/petewanca/team-helen-project-1/wiki/MockupWiki
 
