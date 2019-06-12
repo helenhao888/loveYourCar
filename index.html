@@ -24,19 +24,22 @@
             <div class="row">
                  <br>
                  <select class="make" id="make-menu">
-                    <option value="1" id="make-option">Select A Make</option>                    
+                    <option value="1" class="make-option">Select A Make</option>                    
                  </select>
-                 <select class="vehicleTyp" id="vehicle-menu">
-                        <option value="1" id="vehicle-option">Select A Vehicle Type</option>                    
-                </select>
+
                  <select class="year" id="year-menu">
-                        <option value="1" id="year-option">Select A Year</option>                    
+                        <option value="1" class="year-option">Select A Year</option>                    
+                 </select>
+
+                 <select class="vehicleTyp" id="vehicle-menu" disabled>
+                    <option value="1" class="vehicle-option">Select A Vehicle Type</option>                    
                 </select>
                 
-                <select class="model" id="model-menu">
+                
+                <select class="model" id="model-menu" disabled>
                     <option value="1" id="model-option">Select A Model</option>                    
                 </select>
-                <button class="btn-outline-primary btnSearch">Search</button>
+                <button class="btn-outline-primary" id="btnSearch" >Search</button>
             </div>
             <br>
             <br>
