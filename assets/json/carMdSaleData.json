@@ -1,0 +1,139 @@
+{
+    "carMData" :
+     {"HONDA2018ACCORD":
+        {"SEQ001":{
+                    "campaign_number": "18V629000",
+                    "consequence": "IF THE REARVIEW CAMERA DISPLAY DOES NOT SHOW WHAT IS BEHIND THE VEHICLE, IT CAN INCREASE THE RISK OF A CRASH.",
+                    "corrective_action": "HONDA WILL NOTIFY OWNERS, AND DEALERS WILL REPROGRAM THE DISPLAY AUDIO UNIT SOFTWARE, FREE OF CHARGE.  THE RECALL BEGAN OCTOBER 30, 2018.  OWNERS MAY CONTACT HONDA CUSTOMER SERVICE AT 1-888-234-2138.  HONDA'S NUMBERS FOR THIS RECALL ARE K2G AND V2F.",
+                    "desc": "HONDA (AMERICAN HONDA MOTOR CO.) IS RECALLING CERTAIN 2018 HONDA ACCORD AND 2019 HONDA INSIGHT VEHICLES.  IN CERTAIN SCENARIOS, THE BACK-UP CAMERA CENTER DISPLAY MAY NOT FUNCTION PROPERLY.  AS SUCH, THESE VEHICLES FAIL TO COMPLY WITH THE REQUIREMENTS OF FEDERAL MOTOR VEHICLE SAFETY STANDARD (FMVSS) NUMBER 111, REARVIEW MIRRORS.",
+                    "recall_date": "1/13/2018",
+                    "recall_number": "62073"}
+        },
+
+    "HONDA2018CIVIC":{
+        "SEQ001":{
+                    "campaign_number": "18V817000",
+                    "consequence": "IF THE INFORMATION IS MISSING OR IMPROPER, IT CAN INCREASE THE RISK OF INJURY OR A CRASH.",
+                    "corrective_action": "HONDA WILL NOTIFY OWNERS, AND DEALERS WILL REPLACE THE OWNERS INFORMATION KIT, FREE OF CHARGE.  THE RECALL IS EXPECTED TO BEGIN JANUARY 8, 2019.  OWNERS MAY CONTACT HONDA CUSTOMER SERVICE AT 1-888-234-2138.  HONDA'S NUMBER FOR THIS RECALL IS O3A.",
+                    "desc": "HONDA (AMERICAN HONDA MOTOR CO.) IS RECALLING CERTAIN 2017-2018 HONDA CIVIC HATCHBACK AND CIVIC TYPE R VEHICLES.  THE OWNERS GUIDE IN THESE VEHICLES MAY NOT HAVE BEEN INCLUDED OR  IF INCLUDED, THE OWNER'S GUIDE MAY NOT HAVE BEEN PROPERLY PROVIDED REQUIRED INFORMATION.  AS SUCH, THESE VEHICLES FAIL TO COMPLY WITH THE REQUIREMENTS OF FEDERAL MOTOR VEHICLE SAFETY STANDARD (FMVSS) NUMBER 225, CHILD RESTRAINT ANCHORAGE SYSTEMS.",
+                    "recall_date": "1/16/2018",
+                    "recall_number": "62516"
+                  },
+         "SEQ002":{
+                    "campaign_number": "18V663000",
+                    "consequence": "THE UNINTENDED STEERING INPUT REDUCES VEHICLE MANEUVERABILITY AND INCREASES THE RISK OF A CRASH.",
+                    "corrective_action": "HONDA WILL NOTIFY OWNERS, AND DEALERS WILL REPLACE THE STEERING GEARBOX ASSEMBLY, FREE OF CHARGE.  THE RECALL BEGAN NOVEMBER 9, 2018.  OWNERS MAY CONTACT HONDA CUSTOMER SERVICE AT 1-888-234-2138.  HONDA'S NUMBERS FOR THIS RECALL ARE C2N, P2O.",
+                    "desc": "HONDA (AMERICAN HONDA MOTOR CO.) IS RECALLING CERTAIN 2017-2018 HONDA CIVIC AND CR-V VEHICLES.  THE MAGNET THAT CONTROLS THE  TORQUE SENSOR OUTPUT SIGNAL FOR THE ELECTRONIC POWER STEERING SYSTEM MAY NOT BE PROPERLY SECURED, ALLOWING THE MAGNET TO BECOME DISLODGED.  DURING A FULL LOCK TURN, THE DISLODGED MAGNET MAY CAUSE STEERING ASSIST TO BE APPLIED IN THE OPPOSITE DIRECTION.",
+                    "recall_date": "1/27/2018",
+                    "recall_number": "62515"
+                   }   ,
+         "SEQ003":{
+                    "campaign_number": "18V421000",
+                    "consequence": "IF THE OWNER IS NOT ABLE TO VERIFY IF THEIR VEHICLE IS INVOLVED IN SAFETY RECALL, IT CAN INCREASE THE RISK OF INJURY OR CRASH.",
+                    "corrective_action": "HONDA WILL NOTIFY OWNERS, AND DEALERS WILL REPLACE THE CERTIFICATION LABEL, FREE OF CHARGE.  THE RECALL BEGAN AUGUST 7, 2018.  OWNERS MAY CONTACT HONDA CUSTOMER SERVICE AT 1-888-234-2138.  HONDA'S NUMBER FOR THIS RECALL IS U23.",
+                    "desc": "HONDA (AMERICAN HONDA MOTOR CO.) IS RECALLING CERTAIN 2018 HONDA CIVIC VEHICLES.  THE MANUFACTURING DATE AREA OF THE CERTIFICATION LABELS MAY HAVE RANDOM CHARACTERS WHICH CAN AFFECT THE OWNER'S ABILITY TO DETERMINE IF A SAFETY RECALL INCLUDES THEIR VEHICLE.",
+                    "recall_date": "1/20/2018",
+                    "recall_number": "62517"
+                                 
+        }
+    },
+    "HONDA2018RIDGELINE":{
+        "SEQ001":{
+                    "campaign_number": "18V221000",
+                    "consequence": "IN THE EVENT OF A CRASH, IF THE SEAT DOES NOT REMAIN SECURED TO THE FLOOR, THE SEAT OCCUPANT HAS AN INCREASED RISK OF INJURY.",
+                    "corrective_action": "HONDA WILL NOTIFY OWNERS, AND DEALERS WILL REPLACE THE DRIVER SEAT FRAME ASSEMBLY IN ACURA MDX VEHICLES, AND REPLACE THE DRIVER AND FRONT PASSENGER SEAT SLIDE RAIL FRAMES IN HONDA PILOT AND RIDGELINE VEHICLES, FREE OF CHARGE.  THE RECALL BEGAN MAY 30, 2018.  OWNERS MAY CONTACT HONDA CUSTOMER SERVICE AT 1-888-234-2138.  HONDA'S NUMBERS FOR THIS RECALL IS D0S, AND T0T.",
+                    "desc": "HONDA (AMERICAN HONDA MOTOR CO.) IS RECALLING CERTAIN 2018 HONDA PILOT AND RIDGELINE VEHICLES AND 2018 ACURA MDX VEHICLES.  THE FRONT DRIVER AND PASSENGER POWERED SEATS IN THE HONDA VEHICLES AND THE DRIVER POWERED SEATS IN THE ACURA VEHICLES MAY HAVE BEEN ASSEMBLED WITH IMPROPERLY MANUFACTURED RIVETS.  IN THE EVENT OF A CRASH, THE RIVETS CAN BREAK CAUSING THE SEATS NOT TO BE SECURED TO THE FLOOR.  AS SUCH, THESE VEHICLES MAY FAIL TO COMPLY WITH THE REQUIREMENTS OF FEDERAL MOTOR VEHICLE SAFETY STANDARD (FMVSS) NUMBER 207, SEATING SYSTEMS,AND 210, SEAT BELT ASSEMBLY ANCHORAGES.",
+                    "recall_date": "1/5/2018",
+                    "recall_number": "63434"
+        }
+    }
+},
+
+    "carSaleData" : {
+        "HONDA2018ACCORD" : {
+        "Drive" : "4WD",
+        "Engine" : "2.0L",
+        "Exterior" : "Black",
+        "Image" : "accord.jpg",
+        "Interior" : "Black Leather",
+        "Make" : "Honda",
+        "Model" : "Accord",
+        "Price" : 34000,
+        "Stock Number" : "71-18-H-AC",
+        "Transmission" : "10-Speed Automatic",
+        "Type" : "Passenger",
+        "Year" : 2018
+      },
+      "HONDA2018CLARITY" : {
+        "Drive" : "2WD",
+        "Engine" : "N/A - Electric",
+        "Exterior" : "Pearl",
+        "Image" : "clarity.jpeg",
+        "Interior" : "Gray Cloth",
+        "Make" : "Honda",
+        "Model" : "CLARITY",
+        "Price" : 29000,
+        "Stock Number" : "23-18-H-CT",
+        "Transmission" : "Continuous Variable Transmission",
+        "Type" : "Passenger",
+        "Year" : 2018
+      },
+      "HONDA2018CR-Z" : {
+        "Drive" : "2WD",
+        "Engine" : "1.5L",
+        "Exterior" : "Slate",
+        "Image" : "crz.jpeg",
+        "Interior" : "Black Cloth",
+        "Make" : "Honda",
+        "Model" : "CR-Z",
+        "Price" : 32000,
+        "Stock Number" : "32-18-H-CZ",
+        "Transmission" : "Continuous Variable Transmission",
+        "Type" : "Passenger",
+        "Year" : 2018
+      },
+      "HONDA2018CIVIC" : {
+        "Drive" : "2WD",
+        "Engine" : "1.5L",
+        "Exterior" : "White",
+        "Image" : "civic.jpeg",
+        "Interior" : "Brown Leather",
+        "Make" : "Honda",
+        "Model" : "Civic",
+        "Price" : 29000,
+        "Stock Number" : "92-18-H-CV",
+        "Transmission" : "Continuous Variable Transmission",
+        "Type" : "Passenger",
+        "Year" : 2018
+      },
+      "HONDA2019FIT" : {
+        "Drive" : "2WD",
+        "Engine" : "1.5L",
+        "Exterior" : "White",
+        "Image" : "fit.jpeg",
+        "Interior" : "Black Cloth",
+        "Make" : "Honda",
+        "Model" : "Fit",
+        "Price" : 20000,
+        "Stock Number" : "83-18-H-FT",
+        "Transmission" : "Continuous Variable Transmission",
+        "Type" : "Passenger",
+        "Year" : 2018
+      },
+      "HONDA2018RIDGELINE" : {
+        "Drive" : "4WD",
+        "Engine" : "3.5L",
+        "Exterior" : "Gray",
+        "Image" : "ridgeline.jpg",
+        "Interior" : "Gray Leather",
+        "Make" : "Honda",
+        "Model" : "Ridgeline",
+        "Price" : 37000,
+        "Stock Number" : "42-18-H-RL",
+        "Transmission" : "6-Speed Automatic",
+        "Type" : "Truck",
+        "Year" : 2018
+      }
+    }
+  }
+
