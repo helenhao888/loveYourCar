@@ -1,0 +1,54 @@
+/* Typography
+================================================== */
+
+body {
+   background: #fff;
+   color: #626c84;
+   -webkit-font-smoothing: antialiased;
+   -moz-osx-font-smoothing: grayscale;
+   font-family: 'Asap', sans-serif;
+   font-size: 16px;
+   line-height: 30px;
+}
+
+p {
+   font-family: 'Asap', sans-serif;
+   font-size: 16px;
+   line-height: 30px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+   color: #252a37;
+   font-family: 'gilroy', sans-serif;
+   font-weight: 700;
+}
+
+h1 {
+   font-size: 48px;
+   line-height: 48px;
+}
+
+h2 {
+   font-size: 36px;
+   line-height: 36px;
+}
+
+h3 {
+   font-size: 22px;
+   margin-bottom: 20px;
+}
+
+h4 {
+   font-size: 18px;
+   line-height: 28px;
+}
+
+h5 {
+   font-size: 14px;
+   line-height: 24px;
+}

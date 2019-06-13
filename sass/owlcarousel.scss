@@ -1,0 +1,64 @@
+/*-- Owl slide common --*/
+
+.owl-carousel.page-slider .owl-nav {
+   margin: 0;
+}
+
+.owl-carousel .owl-nav {
+   text-align: center;
+}
+
+.owl-carousel.owl-theme .owl-nav [class*=owl-] {
+   background: #2154cf;
+   color: #fff;
+   position: absolute;
+   bottom: 0;
+   right: 0;
+   width: 40px;
+   height: 40px;
+   line-height: 42px;
+   font-size: 20px;
+   text-align: center;
+   margin: 0;
+   border-radius: 0;
+   -webkit-transition: 400ms;
+   -moz-transition: 400ms;
+   -o-transition: 400ms;
+   transition: 400ms;
+   -webkit-transform: translateY(-50%);
+   transform: translateY(-50%);
+   backface-visibility: hidden;
+}
+
+.owl-carousel.owl-theme .owl-nav [class*=owl-prev] {
+   right: 40px;
+}
+
+.owl-carousel.owl-theme .owl-nav>div:hover {
+   background: #272d33;
+}
+
+.owl-theme .owl-dots {
+   text-align: center;
+   margin-top: 40px;
+   position: relative;
+   z-index: 1;
+}
+
+.owl-theme .owl-dots .owl-dot {
+   display: inline-block;
+}
+
+.owl-theme .owl-dots .owl-dot span {
+   width: 30px;
+   height: 4px;
+   margin: 5px 4px;
+   background: #000;
+   opacity: .2;
+   display: inline-block;
+}
+
+.owl-theme .owl-dots .owl-dot.active span {
+   background: #2154cf;
+   opacity: 1;
+}
