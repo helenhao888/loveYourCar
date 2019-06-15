@@ -20,6 +20,10 @@ caption{
 
     background: linear-gradient(135deg,#ff910e 0,#ffa841 100%);
 }
+
+.results-area {
+    background-image: url("assets/images/bg_pattern1.png");
+}
 .pos-r {
     position: relative!important;
 }
