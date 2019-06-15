@@ -1,0 +1,16 @@
+.vehicleTyp,.model{
+    color:#aaaaaa;
+}
+
+.carPrice{
+    color:blue;
+    size:36px;
+}
+
+caption{
+    caption-side: top;
+    background:lightskyblue;
+    font-size:22px;
+    padding:10px;
+    color:black;
+}
