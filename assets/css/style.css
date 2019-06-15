@@ -15,3 +15,9 @@ caption{
     padding:10px;
     color:black;
   }
+
+ul#nav-auth li{
+    display:inline;
+    margin:12px;
+}
+
