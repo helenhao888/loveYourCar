@@ -17,7 +17,7 @@ caption{
     color:black;
   }
 .orange-fade {
-    background: #ff910e;
+
     background: linear-gradient(135deg,#ff910e 0,#ffa841 100%);
 }
 .pos-r {
@@ -36,7 +36,7 @@ caption{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
+    align-items: right;
 }
 .separator {
     width: 14%;
@@ -52,5 +52,5 @@ caption{
   height: 300px;
 }
 .one-slide img {
-  width: 60%;
+  width: 10%;
 }
