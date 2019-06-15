@@ -1,4 +1,21 @@
 /* Scss Document */
+.vehicleTyp,.model{
+    color:#aaaaaa;
+}
+
+.carPrice{
+    color:blue;
+    size:36px;
+}
+
+caption{
+ 
+    caption-side: top;
+    background:lightskyblue;
+    font-size:22px;
+    padding:10px;
+    color:black;
+  }
 .orange-fade {
     background: #ff910e;
     background: linear-gradient(135deg,#ff910e 0,#ffa841 100%);
