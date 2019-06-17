@@ -8,6 +8,7 @@ var typeArr=[];
 var carKey;
 var ref;
 var modals;
+var userFlg;
 
 
 //  // App's Firebase configuration
@@ -33,6 +34,7 @@ function initialFun(){
     vTypSelFlg=false;
     modelSelFlg=false;
     modelArr=[];
+    userFlg=false;
     // Initialize Firebase
     // firebase.initializeApp(firebaseConfig);
     // Create a variable to reference the database.

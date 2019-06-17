@@ -21,3 +21,34 @@ ul#nav-auth li{
     margin:12px;
 }
 
+.auth-wrapper{
+    display:inline-block;
+  
+
+    
+}
+
+.modal{
+    background-color:lightslategray;
+    height:300px;
+    width:400px;
+    margin:10px;
+    left:300px;
+    top:300px;
+
+}
+
+h4{
+    font-size:32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-login{
+   padding:10px;
+   align-content: center; 
+}
+
+.modal-content{
+   margin:10px;
+}

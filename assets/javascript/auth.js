@@ -14,6 +14,7 @@
 // const auth=firebase.auth();
 // const db=firebase.firestore();
 
+
 $("#signup-form").on("submit",function(event){
     event.preventDefault();
 
@@ -26,7 +27,8 @@ $("#signup-form").on("submit",function(event){
         console.log("cred",cred);
         const modal = $("#modal-signup");
         M.Modal.getInstance(modal).close();
-        $("#signup-form").reset();   
+        $("#signup-email").val("");
+        $("#signup-password").val("");
     })
     .catch(function(error){
         var errorCode=error.code;
@@ -39,9 +41,11 @@ $("#signup-form").on("submit",function(event){
 
 $("#logout").on("click",function(event){
     event.preventDefault();
+    
     auth.signOut().then(() => {
         console.log("user logged out");
-    })
+    })   
+
 })    
 
 
@@ -57,7 +61,8 @@ $("#login-form").on("submit",function(event){
         console.log("cred",cred);
         const modal = $("#modal-login");
         M.Modal.getInstance(modal).close();
-        $("#login-form").reset();
+        $("#login-email").val("");
+        $("#login-password").val("");
     })
     .catch(function(error){
         var errorCode=error.code;
@@ -70,10 +75,20 @@ $("#login-form").on("submit",function(event){
 
 auth.onAuthStateChanged(user =>{
     console.log("user,", user);
+
     if(user){
+        userFlg=true;
         console.log("user logged in");
+        $(".searchBox").show();
+        $(".logged-out").hide();
+        $(".logged-in").show();
 
     }else{
-        console.log("user logged out");
+        userFlg=false;
+        console.log("user logged out on state change");
+        $(".searchBox").hide();
+        $(".logged-in").hide();
+        $(".logged-out").show();
+        
     }
 })
