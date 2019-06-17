@@ -18,9 +18,9 @@
    <link rel="stylesheet" type ="text/css" href="assets/css/style.css">
 </head>
 
-<body class="h-100 w-100 d-flex flex-column">
+<body class="h-100 w-100">
    
-<div class="container">
+<div class="container-fluid">
 
    <!-- header -->
    <div class="row bg-dark">
@@ -32,31 +32,28 @@
    </div>
 
    <!-- search area -->
-   <div class="row">
+   <div class="row search-row text-center py-3">
       <div class="col-lg-12">
          <select class="make" id="make-menu">
             <option value="1" class="make-option">Select A Make</option>                    
          </select>
-
          <select class="year" id="year-menu">
                   <option value="1" class="year-option">Select A Year</option>                    
          </select>
-
          <select class="vehicleTyp" id="vehicle-menu" disabled>
             <option value="1" class="vehicle-option">Select A Vehicle Type</option>                    
          </select>
-                  
          <select class="model" id="model-menu" disabled>
             <option value="1" id="model-option">Select A Model</option>                    
          </select>
-         
          <button class="btn-outline-primary" id="btnSearch" >Search</button>
+         <div class="font-italic">Please make a selection. Your results will show below.</div>
       </div>
    </div>
 
    <!-- results area -->
    <div class="row">
-      <div class="col-lg-12 results-area">
+      <div class="offset-lg-1 col-lg-10 results-area">
          <div class="searchResult">
                <div class="col-lg-6 col-md-6 col-sm-12 col-12  carImg"></div>
                <div class="col-lg-6 col-md-6 col-sm-12 col-12  carSale"></div>
@@ -82,15 +79,15 @@
    </div>
    
    <!-- footer -->
-   <div class="row bg-dark">
+   <div class="row bg-secondary mt-auto">
       <div class="col-lg-12">
-         <h3 class="footer-title">Useful Links</h3>
-         <ul class="footer-links">
-            <li><a href="#">About Us</a></li>
-            <li><a href="#">Our Services</a></li>
-            <li><a href="#">Contact Us</a></li>
+         <!-- <h3 class="footer-title">Useful Links</h3> -->
+         <ul>
+            <li class="footer-links"><a href="#">About Us</a></li>
+            <li class="footer-links"><a href="#">Our Services</a></li>
+            <li class="footer-links"><a href="#">Contact Us</a></li>
          </ul>
-         <div class="copyright-info"><span>"&copy; 2018 | LoveYourCar</span></div>
+         <div class="copyright-info"><span>&copy; 2018 | LoveYourCar</span></div>
 
       </div>
    </div>
