@@ -118,25 +118,43 @@
             <form id="login-form">
                   <div class="input-field">
                      <input type="email" id="login-email" placeholder="Email" required>
-                     <label for="signup-email">Email Address</label>
+                     <label for="login-email">Email Address</label>
                   </div>
                   <div class="input-field">
                      <input type="password" id="login-password" placeholder="Password" required>
-                     <label for="signup-password">Your Password</label>
+                     <label for="login-password">Your Password</label>
                   </div>
                   <div class="login-msg"></div>
                   <button class="btn darken-2 z-depth-0">Login</button>
-                  <br>
-                  <a href="#">Forgot your password?</a>
+                  <br>     
+                  <a href="#" class="grey-text modal-trigger" id="forgotPwd" data-target="modal-reset-pwd">Forgot your password?</a>
             </form>
          </div>    
       </div>
-         <!-- <div id="modal-account" class="modal">
-               <div class="modal-content center-align">
-                     <h4>Account Details</h4> <br>
-                     <div class="account-details"></div>
-               </div>    
-         </div> -->
+      <div id="modal-reset-pwd" class="modal">
+         <div class="modal-content">
+            <h4>Account Recovery</h4> <br>
+            <form id="resend-pwd-form">
+                  <div class="input-field">
+                     <input type="email" id="reset-email" placeholder="Email" required>
+                     <label for="reset-email">Email Address</label>
+                  </div>                
+                 
+                  <button class="btn darken-2 z-depth-0 " >Send</button>
+                 
+                  <br>
+                  <div class="reset-pwd-msg"></div>
+            </form>
+         </div>    
+      </div>
+         <div id="modal-info" class="modal">
+            <div class="modal-content center-align">
+                  <h4>Information</h4> <br>
+                  <p class="display-info"></p>
+            </div> 
+            <div class="modal-footer"></div>                  
+            <button  class="modal-close btn darken-2 z-depth-0 right ">Ok</button>
+      </div>
    </div>
 
          <!-- footer -->

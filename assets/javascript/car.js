@@ -11,6 +11,7 @@ var modals;
 var userFlg;
 
 
+
 //  // App's Firebase configuration
 //  var firebaseConfig = {
 //     apiKey: "AIzaSyB3CyftB9QKqJ8XPtk7uc0jkXfqM_JegXI",
@@ -42,7 +43,7 @@ function initialFun(){
     ref=database.ref();
     modals = $(".modal");
     M.Modal.init(modals);
- 
+    
     $(".carRecallTable").hide();   
 
     // load makes from array    

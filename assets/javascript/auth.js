@@ -13,7 +13,24 @@
 // const database=firebase.database();
 // const auth=firebase.auth();
 // const db=firebase.firestore();
-
+const modalLogin = $("#modal-login");
+const modalSignUp = $("#modal-signup");
+const modalResetPwd = $("#modal-reset-pwd");
+const modalInfo = $("#modal-info");
+//for email link 
+// var actionCodeSettings = {
+//     url: 'https://www.example.com/?email=user@example.com',
+//     // iOS: {
+//     //   bundleId: 'com.example.ios'
+//     // },
+//     // android: {
+//     //   packageName: 'com.example.android',
+//     //   installApp: true,
+//     //   minimumVersion: '12'
+//     // },
+//     handleCodeInApp: true
+//   };
+  
 
 $("#signup-form").on("submit",function(event){
     event.preventDefault();
@@ -23,10 +40,9 @@ $("#signup-form").on("submit",function(event){
     var password =  $("#signup-password").val();
 
     //sign up the user
-    auth.createUserWithEmailAndPassword(email,password).then( function(cred){
-        console.log("cred",cred);
-        const modal = $("#modal-signup");
-        M.Modal.getInstance(modal).close();
+    auth.createUserWithEmailAndPassword(email,password).then( function(cred){        
+        
+        M.Modal.getInstance(modalSignUp).close();
         $("#signup-email").val("");
         $("#signup-password").val("");
     })
@@ -49,16 +65,13 @@ $("#logout").on("click",function(event){
 })    
 
 $("#signup").on("click",function(event){
-    event.preventDefault();
-    $("#modal-login").hide();
-    $("#modal-signup").show();
-    
+    // event.preventDefault();
+    M.Modal.getInstance(modalLogin).close();
 })
 
 $("#login").on("click",function(event){
-    event.preventDefault();
-    $("#modal-signup").hide();
-    $("#modal-login").show();
+    // event.preventDefault();
+    M.Modal.getInstance(modalSignUp).close();
 })
 
 
@@ -71,9 +84,9 @@ $("#login-form").on("submit",function(event){
 
     //sign up the user
     auth.signInWithEmailAndPassword(email,password).then( function(cred){
-        console.log("cred",cred);
-        const modal = $("#modal-login");
-        M.Modal.getInstance(modal).close();
+        
+        // modalLogin = $("#modal-login");
+        M.Modal.getInstance(modalLogin).close();
         $("#login-email").val("");
         $("#login-password").val("");
     })
@@ -105,3 +118,38 @@ auth.onAuthStateChanged(user =>{
         
     }
 })
+
+$("#forgotPwd").on("click",function(){
+
+    M.Modal.getInstance(modalLogin).close();
+    $("#reset-email").val("");
+})
+
+$("#modal-reset-pwd").on("submit",function(event){
+
+    event.preventDefault();
+    $(".reset-pwd-msg").text("");
+    //get user input email
+    var email = $("#reset-email").val();    
+
+    firebase.auth().sendPasswordResetEmail(email)
+    .then( function(){
+        
+        console.log("before close modal reset");
+        M.Modal.getInstance(modalResetPwd).close();
+        M.Modal.getInstance(modalInfo).open();
+        $(".display-info").text("Password reset email sent. Please check your mailbox!")
+        $("#reset-email").val("");
+        
+    })
+    .catch(function(error){
+        console.log("error code resend email",error.code);
+        console.log("error msg",error.message);
+        // var errorCode=error.code;
+        var errorMsg=error.message;
+        $(".reset-pwd-msg").text(errorMsg).css("color","red");
+        
+    })
+
+ })
+
