@@ -42,6 +42,7 @@ function initialFun(){
     ref=database.ref();
     modals = $(".modal");
     M.Modal.init(modals);
+ 
     $(".carRecallTable").hide();   
 
     // load makes from array    

@@ -23,14 +23,12 @@ ul#nav-auth li{
 
 .auth-wrapper{
     display:inline-block;
-  
-
     
 }
 
 .modal{
     background-color:lightslategray;
-    height:300px;
+    height:250px;
     width:400px;
     margin:10px;
     left:300px;

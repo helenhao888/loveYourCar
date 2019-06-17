@@ -48,6 +48,19 @@ $("#logout").on("click",function(event){
 
 })    
 
+$("#signup").on("click",function(event){
+    event.preventDefault();
+    $("#modal-login").hide();
+    $("#modal-signup").show();
+    
+})
+
+$("#login").on("click",function(event){
+    event.preventDefault();
+    $("#modal-signup").hide();
+    $("#modal-login").show();
+})
+
 
 $("#login-form").on("submit",function(event){
     event.preventDefault();
