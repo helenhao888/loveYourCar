@@ -295,19 +295,17 @@ function retrieveMData(key){
 function createCarSale(sale){
 
     //creates tags to hold the car's image and other sale information
+    // var title=$("<div>").text(sale.Make+" "+sale.Year+" "+sale.Model).addClass(".carImg col-lg-5 col-md-5 col-sm-10 col-10");
     var title=$("<div>").text(sale.Make+" "+sale.Year+" "+sale.Model);
     var imgUrl="assets/images/"+sale.Image;    
     var imgDiv=$("<img>").attr("src",imgUrl).addClass("img-fluid");
-    var carImg= $("<div>").addClass(".carImg");
-    var carSale=$("<div>").addClass(".carSale");
+    var carImg= $("<div>").addClass(".carImg col-lg-5 col-md-5 col-sm-10 col-10");
+    var carSale=$("<div>").addClass(".carSale col-lg-5 col-md-5 col-sm-10 col-10");
+    carImg.append(imgDiv);
 
-    if (favoriteFlg === false) {
-        var favoriteDiv=$("<i>").addClass("fa fa-heart addFavorite");
-        favoriteDiv.attr("fav-status","no");
-        carImg.append(title, favoriteDiv,imgDiv);
-    } else{
-        carImg.append(title,imgDiv);
-    }
+  
+    // var carSale=$("<p>").addClass(".carSale").html(carImg);
+   
     
     var price=Number(parseFloat(sale.Price)).toLocaleString("en");
    
@@ -318,7 +316,15 @@ function createCarSale(sale){
     var engine=$("<div>").text("Engine : "+sale.Engine);
     var trans=$("<div>").text("Transmission : "+sale.Transmission);
     var type=$("<div>").text("Type : "+sale.Type);
-    carSale.append(price, extColor,intColor,drive,engine,trans,type);
+    
+    if (favoriteFlg === false) {
+        var favoriteDiv=$("<i>").addClass("fa fa-heart addFavorite");
+        favoriteDiv.attr("fav-status","no");       
+        carSale.append(title,favoriteDiv,price,extColor,intColor,drive,engine,trans,type);
+    } else{
+        carSale.append(title,price, extColor,intColor,drive,engine,trans,type);
+    }      
+    
     $(".searchResult").append(carImg,carSale);
 
 }
