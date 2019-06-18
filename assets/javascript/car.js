@@ -293,23 +293,18 @@ function retrieveMData(key){
 
 //display car sales data 
 function createCarSale(sale){
-
-    //creates tags to hold the car's image and other sale information
-    // var title=$("<div>").text(sale.Make+" "+sale.Year+" "+sale.Model).addClass(".carImg col-lg-5 col-md-5 col-sm-10 col-10");
-    var title=$("<div>").text(sale.Make+" "+sale.Year+" "+sale.Model);
+    
+    //create car image data
     var imgUrl="assets/images/"+sale.Image;    
     var imgDiv=$("<img>").attr("src",imgUrl).addClass("img-fluid");
     var carImg= $("<div>").addClass(".carImg col-lg-5 col-md-5 col-sm-10 col-10");
     var carSale=$("<div>").addClass(".carSale col-lg-5 col-md-5 col-sm-10 col-10");
-    carImg.append(imgDiv);
-
-  
-    // var carSale=$("<p>").addClass(".carSale").html(carImg);
-   
+    carImg.append(imgDiv);   
     
-    var price=Number(parseFloat(sale.Price)).toLocaleString("en");
-   
-    var price=$("<div>").text("Price: $"+price).addClass("carPrice");
+    //create car sales data
+    var priceConv=Number(parseFloat(sale.Price)).toLocaleString("en");
+    var title=$("<div>").text(sale.Make+" "+sale.Year+" "+sale.Model);
+    var price=$("<div>").text("Price: $"+priceConv).addClass("carPrice");
     var extColor=$("<div>").text("Ext. Color: "+sale.Exterior);
     var intColor=$("<div>").text("Int. Color: "+sale.Interior);
     var drive=$("<div>").text("Drive : "+sale.Drive);
@@ -317,6 +312,7 @@ function createCarSale(sale){
     var trans=$("<div>").text("Transmission : "+sale.Transmission);
     var type=$("<div>").text("Type : "+sale.Type);
     
+    //if gets favorite function, don't add favorate icon.
     if (favoriteFlg === false) {
         var favoriteDiv=$("<i>").addClass("fa fa-heart addFavorite");
         favoriteDiv.attr("fav-status","no");       
@@ -355,9 +351,6 @@ function createCarMdEmpty(){
     $(".carRecallTable").show();
 
 }
-
-
-
 
 //when addFavorite is clicked, call function favFunction
 $(document).on("click",".addFavorite",favFunction);
@@ -398,7 +391,7 @@ function deleteFavFunction(){
         //get the favorites from localstorage and store in favorite Array 
         favoriteArr=JSON.parse(localFavorite);           
         var indexFav=favoriteArr.findIndex(x=> x===carKey);   
-        console.log("index",indexFav);
+       
         if (indexFav!=-1)   {
           //delete this picture from favorite array 
            favoriteArr.splice(indexFav,1);           
@@ -419,7 +412,7 @@ $(".myFavorite").on("click",function(){
     //if can get the data from local storage, display all the favorite images
     if (getFav != null){
         for (var j=0;j<getFav.length;j++){
-            console.log("getFav j",getFav[j]);
+           
             favoriteFlg=true;
             retrieveSaleData(getFav[j]);
         }
