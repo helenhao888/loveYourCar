@@ -34,7 +34,7 @@ $("#logout").on("click",function(event){
     event.preventDefault();
     
     auth.signOut().then(() => {
-        console.log("user logged out");
+        console.log("user logged out");    
     })   
     .catch(function(error){        
         var errorMsg=error.message;
@@ -88,12 +88,13 @@ auth.onAuthStateChanged(user =>{
         $(".searchBox").show();
         $(".logged-out").hide();
         $(".logged-in").show();
-
+        $(".results-area").show();
     }else{
         //when user isn't logged in, don't show the search area and only shows the login/sign up links
         userFlg=false;
        
         $(".searchBox").hide();
+        $(".results-area").hide();
         $(".logged-in").hide();
         $(".logged-out").show();
         

@@ -98,3 +98,8 @@ a:hover {
 .header-row {
     background-color: rgb(55,61,66);
 }
+
+.addFavorite{
+    margin:10px;
+    color:black;
+}
