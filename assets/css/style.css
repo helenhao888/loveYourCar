@@ -61,6 +61,8 @@ h4 {
 
 body {
     background-image: url("../images/dealerPic.jpg");
+    background-size: cover;
+
 }
 
 .footer-style {
