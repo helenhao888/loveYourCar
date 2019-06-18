@@ -49,3 +49,7 @@ h4{
 .modal-content{
    margin:10px;
 }
+
+body {
+    background-image: url("../images/dealerPic.jpg");
+}
