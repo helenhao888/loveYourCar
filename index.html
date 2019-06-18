@@ -24,26 +24,32 @@
    <div class="container-fluid">
    
       <!-- header -->
-      <div class="row bg-dark">
-         <div class="col-lg-12">
+      <div class="row header-row">
+         <div class="offset-lg-1 col-lg-2">
             <a class="navbar-brand" href="#">
                <img src="assets/images/logo5.png" class="d-inline-block align-top" width="255" height="75" alt="">
             </a>
-            <div class="auth-wrapper " >
-               <ul id="nav-auth" class="right hide-on-med-and-down">                               
-                     <li class="logged-out">
-                           <a href="#" class="grey-text modal-trigger" id="login" data-target="modal-login">Login</a>
-                     </li>
-                     <li class="logged-out">
-                           <a href="#" class="grey-text modal-trigger" id="signup" data-target="modal-signup">Sign Up</a>
-                     </li>
-                     <li class="logged-in">
-                     <a href="#" class="grey-text" id="logout">Logout</a>
-                  </li>
-               </ul>
-            </div> 
          </div>
-      </div>
+            <div class="col-lg-6">
+               <!-- placeholder column -->
+            </div>
+            <div class="col-lg-3 pt-3">
+               <div class="auth-wrapper">
+                  <ul id="nav-auth" class="right hide-on-med-and-down">                               
+                        <li class="logged-out">
+                              <a href="#" class="grey-text modal-trigger" id="login" data-target="modal-login">Login</a>
+                        </li>
+                        <li class="logged-out">
+                              <a href="#" class="grey-text modal-trigger" id="signup" data-target="modal-signup">Sign Up</a>
+                        </li>
+                        <li class="logged-in">
+                        <a href="#" class="grey-text" id="logout">Logout</a>
+                     </li>
+                  </ul>
+               </div> 
+            </div>
+         </div>
+         
    
       <!-- search area -->
       <div class="row  searchBox text-center py-3">
@@ -65,19 +71,21 @@
             </select>
             
             <button class="btn-outline-primary" id="btnSearch" >Search</button>
+            <p><span class="helpText">Please choose all options to find a vehicle.</span></p>
          </div>
       </div>
-   
+     
+
       <!-- results area -->
       <div class="row">
-         <div class="col-lg-12 results-area">
+         <div class="offset-lg-1 col-lg-10 results-area">
             <div class="searchResult">
                   <div class="col-lg-6 col-md-6 col-sm-12 col-12  carImg"></div>
                   <div class="col-lg-6 col-md-6 col-sm-12 col-12  carSale"></div>
             </div>
                
             <table class="table table-bordered table-hover carRecallTable">
-               <caption>Car Recalls Information</caption>
+               <caption>Car Recall Information</caption>
             
                <thead class="thead-dark">                
                   <tr>
@@ -162,19 +170,50 @@
 <!-- end of Master Page Container -->
 
 <!-- footer -->
-      <div class="footer mt-auto py-3">
+      <div class="footer mt-auto">
          <div class="container-fluid">   
-            <div class="row bg-secondary">
-               <div class="col-lg-12">
-                  <h3 class="footer-title">Useful Links</h3>
+            <div class="row footer-style">
+               <div class="offset-lg-1 col-lg-2">
                   <ul class="footer-links">
+                     <li><a href="#">Quick Links</a></li>
                      <li><a href="#">About Us</a></li>
-                     <li><a href="#">Our Services</a></li>
-                     <li><a href="#">Contact Us</a></li>
+                     <li><a href="#">Careers</a></li>
+                     <li><a href="#">Contact</a></li>
                   </ul>
-                  <div class="copyright-info"><span>&copy; 2018 | LoveYourCar</span></div>
+               </div>
+
+               <div class="col-lg-2">
+                  <ul class="footer-links">
+                        <li><a href="#">Who We Help</a></li>
+                        <li><a href="#">First-Time Buyers</a></li>
+                        <li><a href="#">Car Geeks</a></li>
+                        <li><a href="#">Resellers</a></li>
+                  </ul>
+               </div>
+                  
+               <div class="col-lg-3">
+                  <ul class="footer-links">
+                        <li><a href="#">Contact Us</a></li>
+                        <li>+1 (704) 306-7890</a></li>
+                        <li>123 Test Street<br>Springfield, IL, 37024</li>
+                  </ul>
+               </div>
+
+               <div class="col-lg-3 text-center">
+                  <img class="geoLocate" src="assets/images/geoLocate.jpg" alt="find us image">
+                  <p class="locationBlurb"><a href="#">Directions to your nearest Dealer</a></p>
+               </div>
+
+            </div>
+
+            <div class="row">
+               <div class="col-lg-12">
+                     <div class="copyright-info text-center">
+                        <span>&copy; 2018 | LoveYourCar</span>
+                     </div>
                </div>
             </div>
+
          </div>
       </div>
 
@@ -185,6 +224,6 @@
 <script src="assets/javascript/firebase.js" ></script>
 <script src="assets/javascript/car.js" ></script>
 <script src="assets/javascript/auth.js" ></script>
-     
+
 </body>
 </html>
