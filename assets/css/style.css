@@ -8,13 +8,12 @@
 }
 
 caption{
- 
     caption-side: top;
     background:lightskyblue;
     font-size:22px;
     padding:10px;
     color:black;
-  }
+}
 
 ul#nav-auth li{
     display:inline;
