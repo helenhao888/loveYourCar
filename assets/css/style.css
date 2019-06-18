@@ -14,3 +14,38 @@ caption{
     padding:10px;
     color:black;
 }
+
+ul#nav-auth li{
+    display:inline;
+    margin:12px;
+}
+
+.auth-wrapper{
+    display:inline-block;
+    
+}
+
+.modal{
+    background-color:lightslategray;
+    height:250px;
+    width:400px;
+    margin:10px;
+    left:300px;
+    top:300px;
+
+}
+
+h4{
+    font-size:32px;
+    font-weight: bold;
+    text-align: center;
+}
+
+.modal-login{
+   padding:10px;
+   align-content: center; 
+}
+
+.modal-content{
+   margin:10px;
+}
