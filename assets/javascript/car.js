@@ -11,6 +11,7 @@ var modals;
 var userFlg;
 var favoriteArr=[];
 favoriteFlg=false;
+var userId;
 
   
 
@@ -369,11 +370,11 @@ function favFunction(){
         favorites.css("color","black");
     }else{
         //  add the favorite car key to favoriteArr
-        if(!favoriteArr.includes(carKey)){
-           favoriteArr.push(carKey);    
+        // if(!favoriteArr.includes(carKey)){
+           favoriteArr.push({user:userId,carkey:carKey});    
            //save the favorite array to the local storage
            localStorage.setItem("favorite",JSON.stringify(favoriteArr));
-        }
+        // }
         //change favorite tag's status and color
         favorites.attr("fav-status","yes");
         favorites.css("color","red");
@@ -390,7 +391,7 @@ function deleteFavFunction(){
 
         //get the favorites from localstorage and store in favorite Array 
         favoriteArr=JSON.parse(localFavorite);           
-        var indexFav=favoriteArr.findIndex(x=> x===carKey);   
+        var indexFav=favoriteArr.findIndex(x=> x.carkey===carKey && x.user === userId);   
        
         if (indexFav!=-1)   {
           //delete this picture from favorite array 
@@ -412,9 +413,11 @@ $(".myFavorite").on("click",function(){
     //if can get the data from local storage, display all the favorite images
     if (getFav != null){
         for (var j=0;j<getFav.length;j++){
-           
-            favoriteFlg=true;
-            retrieveSaleData(getFav[j]);
+            //get the current user's favorites
+            if( getFav[j].user === userId){                
+                favoriteFlg=true;
+                retrieveSaleData(getFav[j].carkey);
+            }
         }
     } 
 })

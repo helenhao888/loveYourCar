@@ -84,17 +84,21 @@ auth.onAuthStateChanged(user =>{
    //when user is logged in, don't show login/signup links. Show the search area
     if(user){
         userFlg=true;
-     
+        userId=user.uid;
         $(".searchBox").show();
         $(".logged-out").hide();
         $(".logged-in").show();
         $(".results-area").show();
+        
     }else{
         //when user isn't logged in, don't show the search area and only shows the login/sign up links
         userFlg=false;
-       
+        userId="";       
         $(".searchBox").hide();
+        $(".searchResult").empty();
+        $(".recallList").empty();
         $(".results-area").hide();
+        $(".carRecallTable").hide();
         $(".logged-in").hide();
         $(".logged-out").show();
         
