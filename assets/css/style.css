@@ -1,55 +1,100 @@
 .vehicleTyp,.model{
-    color:#aaaaaa;
+    color: #aaaaaa;
 }
 
 .carPrice{
-    color:blue;
-    size:36px;
+    color: white;
+    size: 36px;
+    font-weight: bold;
 }
 
-caption{
+caption {
     caption-side: top;
-    background:lightskyblue;
-    font-size:22px;
-    padding:10px;
-    color:black;
+    background: lightskyblue;
+    font-size: 22px;
+    padding: 10px;
+    color: black;
 }
 
-ul#nav-auth li{
-    display:inline;
-    margin:12px;
+td {
+    color: white;
+    background-color: #aaaaaa;
 }
 
-.auth-wrapper{
-    display:inline-block;
-    
+.searchResult {
+    color: white;
+    font-weight: bold
 }
 
-.modal{
-    background-color:lightslategray;
-    height:250px;
-    width:400px;
-    margin:10px;
-    left:300px;
-    top:300px;
-
+#nav-auth li {
+    display: inline-block;
+    margin: 12px;
 }
 
-h4{
-    font-size:32px;
+.auth-wrapper {
+    display: inline-block;
+}
+
+.modal {
+    background-color: lightslategray;
+    height: 250px;
+    width: 400px;
+    margin: 10px;
+    left: 300px;
+    top: 300px;
+}
+
+h4 {
+    font-size: 32px;
     font-weight: bold;
     text-align: center;
 }
 
-.modal-login{
-   padding:10px;
+.modal-login {
+   padding: 10px;
    align-content: center; 
 }
 
 .modal-content{
-   margin:10px;
+   margin: 10px;
 }
 
 body {
     background-image: url("../images/dealerPic.jpg");
+}
+
+.footer-style {
+    padding-top: 30px;
+    padding-bottom: 10px;
+}
+
+.copyright-info {
+    font-size: small;
+}
+
+.geoLocate {
+    width: 150px;
+}
+
+.locationBlurb {
+    padding-top: 10px;
+}
+
+.helpText {
+    font-style: italic;
+    color: white;
+    font-size: small;
+}
+
+a:hover {
+    text-decoration: none;
+    color: red;
+}
+
+.footer {
+    background-image: url("../images/concrete-texture.png");
+}
+
+.header-row {
+    background-color: rgb(55,61,66);
 }

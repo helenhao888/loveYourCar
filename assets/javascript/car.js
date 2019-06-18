@@ -285,10 +285,10 @@ function retrieveMData(key){
 function createCarSale(sale){
 
     //creates tags to hold the car's image and other sale information
-    var title=$("<div>").text(sale.Make+" "+sale.Year+" "+sale.Model);
+    var title=$("<div>").text(sale.Year+" "+sale.Make+" "+sale.Model);
     var imgUrl="assets/images/"+sale.Image;
     
-    var imgDiv=$("<img>").attr("src",imgUrl).addClass("img-fluid");
+    var imgDiv=$("<img>").attr("src",imgUrl).addClass("img-fluid, float-left").width(350);
     $(".carImg").append(title,imgDiv);
 
     var price=Number(parseFloat(sale.Price)).toLocaleString("en");
@@ -300,7 +300,7 @@ function createCarSale(sale){
     var engine=$("<div>").text("Engine : "+sale.Engine);
     var trans=$("<div>").text("Transmission : "+sale.Transmission);
     var type=$("<div>").text("Type : "+sale.Type);
-    $(".carSale").append(price, extColor,intColor,drive,engine,trans,type);
+    $(".carSale").append(price, extColor,intColor,drive,engine,trans,type).addClass("float-right");
 
 }
 
