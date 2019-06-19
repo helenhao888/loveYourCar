@@ -1,0 +1,13 @@
+body{
+    background-color: #2874A6;
+    text-align: center;
+}
+.box{
+    width: 300px;
+    border: 15px solid green;
+    padding: 50px;
+    margin: 20px;
+    align-content: center;
+    float: center;
+     
+}

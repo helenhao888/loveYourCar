@@ -1,228 +1,66 @@
-<!DOCTYPE HTML>
-<html lang="en" class="h-100 w-100">
-
+<!DOCTYPE html>
+<html lang="en">
 <head>
-   <title>Love Your Car</title>
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <!-- Reset CSS -->
-   <link rel="stylesheet" type ="text/css" href="assets/css/reset.css">
-   <!-- jQuery -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.0/jquery.min.js"></script>
-   <!-- Bootstrap -->
-   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css"/>
-   <!-- Custom CSS -->
-   <link rel="stylesheet" type ="text/css" href="assets/css/style.css"/>
-   <!-- Firebase Reference -->
-   <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
-   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.4.0.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="train.css">
+    <script src="/__/firebase/init.js"></script>
+    <title>train chain</title>
 </head>
-  
+<header>
+   <img src="http://images.capitolcorridor.org/wp-content/uploads/2016/04/Capitol_Corridor_SanJoaquin.jpg">
+</header>
 
-<body class="h-100 w-100 d-flex flex-column">
-
-   <div class="container-fluid">
-   
-      <!-- header -->
-      <div class="row header-row">
-         <div class="offset-lg-1 col-lg-2">
-            <a class="navbar-brand" href="#">
-               <img src="assets/images/logo5.png" class="d-inline-block align-top" width="255" height="75" alt="app logo">
-            </a>
-         </div>
-            <div class="col-lg-6">
-               <!-- placeholder column -->
-            </div>
-            <div class="col-lg-3 pt-3">
-               <a class="myFavorite logged-in" href="#"><i class="fa fa-heart "></i> Favorite</a>
-               <div class="auth-wrapper">
-                  <ul id="nav-auth" class="right hide-on-med-and-down">                               
-                        <li class="logged-out">
-                              <a href="#" class="grey-text modal-trigger" id="login" data-target="modal-login">Login</a>
-                        </li>
-                        <li class="logged-out">
-                              <a href="#" class="grey-text modal-trigger" id="signup" data-target="modal-signup">Sign Up</a>
-                        </li>
-                        <li class="logged-in">
-                        <a href="#" class="grey-text" id="logout">Logout</a>
-                     </li>
-                  </ul>
-               </div> 
-            </div>
-         </div>
-         
-   
-      <!-- search area -->
-      <div class="row  searchBox text-center py-3">
-         <div class="col-lg-12">
-            <select class="make" id="make-menu">
-               <option value="1" class="make-option">Select A Make</option>                    
-            </select>
-   
-            <select class="year" id="year-menu">
-                     <option value="1" class="year-option">Select A Year</option>                    
-            </select>
-   
-            <select class="vehicleTyp" id="vehicle-menu" disabled>
-               <option value="1" class="vehicle-option">Select A Vehicle Type</option>                    
-            </select>
-                     
-            <select class="model" id="model-menu" disabled>
-               <option value="1" id="model-option">Select A Model</option>                    
-            </select>
-            
-            <button class="btn-outline-primary" id="btnSearch" >Search</button>
-            <p><span class="helpText">Please choose all options to find a vehicle.</span></p>
-         </div>
-      </div>
-     
-
-      <!-- results area -->
-      <div class="row">
-         <div class="offset-lg-1 col-lg-10 results-area">
-            <div class="row searchResult">                  
-            </div>
-               
-            <table class="table table-bordered table-hover carRecallTable">
-               <caption>Car Recall Information</caption>
-            
-               <thead class="thead-dark">                
-                  <tr>
-                     <th scope="col">Recall Number</th>   
-                     <th scope="col">Recall Date</th>
-                     <th scope="col">Description</th>
-                     <th scope="col">Consequence</th>
-                     <th scope="col">Action</th>                                                            
-                  </tr>              
-               </thead>
-               
-               <tbody class="recallList">              
-               </tbody>
-            </table>
-         </div>
-      </div>
-
-   <!-- add user authetication modals -->
-   <div class="row modal-container">
-      <div id="modal-signup" class="modal">
-         <div class="modal-content"> 
-            <h4>Sign Up</h4> <br>
-            <form id="signup-form">
-                  <div class="input-field">
-                     <input type="email" id="signup-email" required>
-                     <label for="signup-email">Email Address</label>
-                  </div>
-                  <div class="input-field">
-                        <input type="password" id="signup-password" required>
-                        <label for="signup-password">Choose Password</label>
-                  </div>
-                  <div class="signup-msg"></div>
-                  <button class="btn yellow darken-2 z-depth-0">Sign Up</button>
-            </form>
-         </div>    
-      </div>
-      <div id="modal-login" class="modal">
-         <div class="modal-content">
-            <h4>Member Login</h4> <br>
-            <form id="login-form">
-                  <div class="input-field">
-                     <input type="email" id="login-email" placeholder="Email" required>
-                     <label for="login-email">Email Address</label>
-                  </div>
-                  <div class="input-field">
-                     <input type="password" id="login-password" placeholder="Password" required>
-                     <label for="login-password">Your Password</label>
-                  </div>
-                  <div class="login-msg"></div>
-                  <button class="btn darken-2 z-depth-0">Login</button>
-                  <br>     
-                  <a href="#" class="grey-text modal-trigger" id="forgotPwd" data-target="modal-reset-pwd">Forgot your password?</a>
-            </form>
-         </div>    
-      </div>
-      <div id="modal-reset-pwd" class="modal">
-         <div class="modal-content">
-            <h4>Account Recovery</h4> <br>
-            <form id="resend-pwd-form">
-                  <div class="input-field">
-                     <input type="email" id="reset-email" placeholder="Email" required>
-                     <label for="reset-email">Email Address</label>
-                  </div>                
-                 
-                  <button class="btn darken-2 z-depth-0 " >Send</button>
-                 
-                  <br>
-                  <div class="reset-pwd-msg"></div>
-            </form>
-         </div>    
-      </div>
-         <div id="modal-info" class="modal">
-            <div class="modal-content center-align">
-                  <h4>Information</h4> <br>
-                  <p class="display-info"></p>
-            </div> 
-            <div class="modal-footer"></div>                  
-            <button  class="modal-close btn darken-2 z-depth-0 right ">Ok</button>
-      </div>
-   </div>
+<body>
+<div class="table"></div>
+    <thead>
+        <th scope="col">Train Name</th>
+        <th scope="col">Destination</th>
+        <th scope="col">First Time</th>
+        <th scope="col">Frequency</th>
+    </thead>
+    <tbody id="train-table-body"></tbody>
 </div>
-<!-- end of Master Page Container -->
+<form>
+    <div class="box">
+    <div class="form-group">
+     <label for="trainName">Train Name</label>
+     <input type="text" class="form-control" id="trainName" >
+     <br>
+     <br>
+     <label for="destination">Destination</label>
+     <input type="text" class="form-control" id="destination">
+     <br>
+     <br>
+     <label for="firsTime">First Time</label>
+     <input type="time" class="form-control" id="firsTime">
+     <br>
+     <br>
+     <label for="frequency">Frequency</label>
+     <input type="number" class="form-control" id="frequency">
+     </div>
+     <br>
+     <button id="submit">Submit</button>
+    </div>
+    </form>
 
-<!-- footer -->
-      <div class="footer mt-auto">
-         <div class="container-fluid">   
-            <div class="row footer-style">
-               <div class="offset-lg-1 col-lg-2">
-                  <ul class="footer-links">
-                     <li><a href="#">Quick Links</a></li>
-                     <li><a href="#">About Us</a></li>
-                     <li><a href="#">Careers</a></li>
-                     <li><a href="#">Contact</a></li>
-                  </ul>
-               </div>
+    <script src="train.js"> </script>
+    <!-- <script>
+            // Your web app's Firebase configuration
+            var firebaseConfig = {
+              apiKey: "AIzaSyBKoOHAha30iJ6EuzVfIMSMkKr-TiuWBc0",
+              authDomain: "traing-2147c.firebaseapp.com",
+              databaseURL: "https://traing-2147c.firebaseio.com",
+              projectId: "traing-2147c",
+              storageBucket: "",
+              messagingSenderId: "346591542335",
+              appId: "1:346591542335:web:df3e04a774001387"
+            };
+            // Initialize Firebase
+            firebase.initializeApp(firebaseConfig);
+    </script>
+</body> -->
 
-               <div class="col-lg-2">
-                  <ul class="footer-links">
-                        <li><a href="#">Who We Help</a></li>
-                        <li><a href="#">First-Time Buyers</a></li>
-                        <li><a href="#">Car Geeks</a></li>
-                        <li><a href="#">Resellers</a></li>
-                  </ul>
-               </div>
-                  
-               <div class="col-lg-3">
-                  <ul class="footer-links">
-                        <li><a href="#">Contact Us</a></li>
-                        <li>+1 (704) 306-7890</a></li>
-                        <li>123 Test Street<br>Springfield, IL, 37024</li>
-                  </ul>
-               </div>
-
-               <div class="col-lg-3 text-center">
-                  <img class="geoLocate" src="assets/images/geoLocate.jpg" alt="find us image">
-                  <p class="locationBlurb"><a href="#">Directions to your nearest Dealer</a></p>
-               </div>
-
-            </div>
-
-            <div class="row">
-               <div class="col-lg-12">
-                     <div class="copyright-info text-center">
-                        <span>&copy; 2018 | LoveYourCar</span>
-                     </div>
-               </div>
-            </div>
-
-         </div>
-      </div>
-
-
-<!-- Add Firebase products  -->
-<script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="assets/javascript/firebaseConfig.js" ></script>
-<script src="assets/javascript/car.js" ></script>
-<script src="assets/javascript/auth.js" ></script>
-
-</body>
 </html>
