@@ -9,6 +9,9 @@ var carKey;
 var ref;
 var modals;
 var userFlg;
+var favoriteArr=[];
+favoriteFlg=false;
+var userId;
 
   
 
@@ -22,11 +25,17 @@ function initialFun(){
     yearSelFlg=false;
     vTypSelFlg=false;
     modelSelFlg=false;
+    favoriteFlg=false;
     modelArr=[];
     userFlg=false;    
     ref=database.ref();
     modals = $(".modal");
     M.Modal.init(modals);
+
+     //get the favorites from localstorage and store in favorite Array    
+     if (localStorage.getItem("favorite")!= null){
+        favoriteArr=JSON.parse(localStorage.getItem("favorite"));
+    }  
     
     $(".carRecallTable").hide();   
 
@@ -136,12 +145,14 @@ $("select.model").change(function(){
 //when user click search button, perform this function
 $("#btnSearch").on("click",function(){
 
+    favoriteFlg=false;
+    $(".carRecallTable").show();
     //combine the make, year and model as the key , in order to retrieve data from database
     carKey=(make+year+model).toUpperCase();
     //empty result divs
     $(".recallList").empty();
-    $(".carImg").empty();
-    $(".carSale").empty();
+    $(".searchResult").empty();
+   
     //get car sales data from database
     retrieveSaleData(carKey);
     //get car recall data from database
@@ -283,24 +294,35 @@ function retrieveMData(key){
 
 //display car sales data 
 function createCarSale(sale){
-
-    //creates tags to hold the car's image and other sale information
-    var title=$("<div>").text(sale.Year+" "+sale.Make+" "+sale.Model);
-    var imgUrl="assets/images/"+sale.Image;
     
-    var imgDiv=$("<img>").attr("src",imgUrl).addClass("img-fluid, float-left").width(350);
-    $(".carImg").append(title,imgDiv);
-
-    var price=Number(parseFloat(sale.Price)).toLocaleString("en");
-   
-    var price=$("<div>").text("Price: $"+price).addClass("carPrice");
+    //create car image data
+    var imgUrl="assets/images/"+sale.Image;    
+    var imgDiv=$("<img>").attr("src",imgUrl).addClass("img-fluid");
+    var carImg= $("<div>").addClass(".carImg col-lg-5 col-md-5 col-sm-10 col-10");
+    var carSale=$("<div>").addClass(".carSale col-lg-5 col-md-5 col-sm-10 col-10");
+    carImg.append(imgDiv);   
+    
+    //create car sales data
+    var priceConv=Number(parseFloat(sale.Price)).toLocaleString("en");
+    var title=$("<div>").text(sale.Make+" "+sale.Year+" "+sale.Model);
+    var price=$("<div>").text("Price: $"+priceConv).addClass("carPrice");
     var extColor=$("<div>").text("Ext. Color: "+sale.Exterior);
     var intColor=$("<div>").text("Int. Color: "+sale.Interior);
     var drive=$("<div>").text("Drive : "+sale.Drive);
     var engine=$("<div>").text("Engine : "+sale.Engine);
     var trans=$("<div>").text("Transmission : "+sale.Transmission);
     var type=$("<div>").text("Type : "+sale.Type);
-    $(".carSale").append(price, extColor,intColor,drive,engine,trans,type).addClass("float-right");
+    
+    //if gets favorite function, don't add favorate icon.
+    if (favoriteFlg === false) {
+        var favoriteDiv=$("<i>").addClass("fa fa-heart addFavorite");
+        favoriteDiv.attr("fav-status","no");       
+        carSale.append(title,favoriteDiv,price,extColor,intColor,drive,engine,trans,type);
+    } else{
+        carSale.append(title,price, extColor,intColor,drive,engine,trans,type);
+    }      
+    
+    $(".searchResult").append(carImg,carSale);
 
 }
 
@@ -331,4 +353,74 @@ function createCarMdEmpty(){
 
 }
 
+//when addFavorite is clicked, call function favFunction
+$(document).on("click",".addFavorite",favFunction);
+
+//add the favorite car's info to local Storage or delete it from local strorage
+function favFunction(){
+    
+    var favFlg=$(this).attr("fav-status");
+    var favorites=$(this);    
+
+
+    if(favFlg==="yes"){
+        //when the favorite tag is unselected, call the delete favorite function
+        deleteFavFunction();
+        favorites.attr("fav-status","no");
+        favorites.css("color","black");
+    }else{
+        //  add the favorite car key to favoriteArr
+        // if(!favoriteArr.includes(carKey)){
+           favoriteArr.push({user:userId,carkey:carKey});    
+           //save the favorite array to the local storage
+           localStorage.setItem("favorite",JSON.stringify(favoriteArr));
+        // }
+        //change favorite tag's status and color
+        favorites.attr("fav-status","yes");
+        favorites.css("color","red");
+        
+    }
+}
+
+//delete  favorite image process
+function deleteFavFunction(){
+
+     var localFavorite=localStorage.getItem("favorite");
+     //If local storage has the data with key 'favorite', check if it exists, delete it 
+     if (localStorage.getItem("favorite")!= null){
+
+        //get the favorites from localstorage and store in favorite Array 
+        favoriteArr=JSON.parse(localFavorite);           
+        var indexFav=favoriteArr.findIndex(x=> x.carkey===carKey && x.user === userId);   
+       
+        if (indexFav!=-1)   {
+          //delete this picture from favorite array 
+           favoriteArr.splice(indexFav,1);           
+           //update local storage 
+           localStorage.setItem("favorite",JSON.stringify(favoriteArr));
+        }      
+    }
+
+}
+
+//when click on my Favorite, get them from local storage and display them
+$(".myFavorite").on("click",function(){
+    
+    $(".searchResult").empty();    
+    $(".recallList").empty();
+    $(".carRecallTable").hide();
+    var getFav=JSON.parse(localStorage.getItem("favorite"));  
+    //if can get the data from local storage, display all the favorite images
+    if (getFav != null){
+        for (var j=0;j<getFav.length;j++){
+            //get the current user's favorites
+            if( getFav[j].user === userId){                
+                favoriteFlg=true;
+                retrieveSaleData(getFav[j].carkey);
+            }
+        }
+    } 
 })
+
+
+}) //end of document ready

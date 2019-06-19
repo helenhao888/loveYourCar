@@ -3,7 +3,7 @@
 
 <head>
    <title>Love Your Car</title>
-
+   <meta name="viewport" content="width=device-width, initial-scale=1">
    <!-- Reset CSS -->
    <link rel="stylesheet" type ="text/css" href="assets/css/reset.css">
    <!-- jQuery -->
@@ -34,6 +34,7 @@
                <!-- placeholder column -->
             </div>
             <div class="col-lg-3 pt-3">
+               <a class="myFavorite logged-in" href="#"><i class="fa fa-heart "></i> Favorite</a>
                <div class="auth-wrapper">
                   <ul id="nav-auth" class="right hide-on-med-and-down">                               
                         <li class="logged-out">
@@ -79,9 +80,7 @@
       <!-- results area -->
       <div class="row">
          <div class="offset-lg-1 col-lg-10 results-area">
-            <div class="searchResult">
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-12  carImg"></div>
-                  <div class="col-lg-6 col-md-6 col-sm-12 col-12  carSale"></div>
+            <div class="row searchResult">                  
             </div>
                
             <table class="table table-bordered table-hover carRecallTable">
@@ -221,7 +220,7 @@
 <!-- Add Firebase products  -->
 <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase-auth.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-<script src="assets/javascript/firebase.js" ></script>
+<script src="assets/javascript/firebaseConfig.js" ></script>
 <script src="assets/javascript/car.js" ></script>
 <script src="assets/javascript/auth.js" ></script>
 
