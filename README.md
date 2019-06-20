@@ -1,5 +1,4 @@
 # LoveYourCar Web Application (Team Helen)
- - group repo for our first class project
 
 ### Live Link
  - https://petewanca.github.io/team-helen-project-1/
@@ -21,7 +20,7 @@
   - NHTSAVehicle API
 
 ### About
-Social media application for book lovers
+A web application prospective car shoppers can use to find car recall and sale data all in one place.
 
 ### License
 This project is licensed under The MIT License (MIT).
